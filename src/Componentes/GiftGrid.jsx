@@ -1,21 +1,12 @@
-import { getGifts } from "../Funciones/getGifts";
-import { useEffect, useState } from "react";
+
 import { GiftItem } from "./GiftItem";
+import { useFetchGifts } from "../hooks/useFetchGifts";
 
 
 
 export const GrifGrid = ({ category }) => {
-    const [images, setImages] = useState([]);
-
-    const getImages = async () => {
-        const newImages = await getGifts(category);
-        setImages(newImages)
-    }
-    console.log(images);
     
-    useEffect(() => {
-        getImages()
-    }, [])
+    const {images, isLoading} = useFetchGifts(category);
 
     return (
         <>
