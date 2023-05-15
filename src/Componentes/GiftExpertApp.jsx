@@ -12,6 +12,8 @@ export function App() {
     setCategories([newCategory,...categories]);
   };
 
+
+  
   return (
     //Se realiza el uso del props cambioCategoria, donde se pasa como función setCategories
     <>
